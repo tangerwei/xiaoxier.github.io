@@ -58,7 +58,7 @@ body {
 }
 .navbar-brand:hover {
 	text-decoration:none;
-	text-shadow:0 1px 0 rgba(255,255,255,.1),0 0 30px rgba(255,255,255,.4)
+	text-shadow:0 1px 0 rgba(255,255,255,.1),0 0 20px rgba(255,255,255,.4)
 }
 .pagination {
 	margin:10px 0
@@ -129,20 +129,20 @@ li i {
 	scroll:auto;
 	overflow:auto;
 	max-height:3in;
-	background-color:#000
+	background-color:darkgray
 }
 ul.search-result-list {
 	padding-left:10px
 }
 a.search-result-title {
-	font-weight:bold
+	font-weight:normal
 }
 p.search-result {
 	color:#555
 }
 em.search-keyword {
 	border-bottom:1px dashed #4088b8;
-	font-weight:bold
+	font-weight:normal
 }
 .tagcloud .entry {
 	width:100%
@@ -261,7 +261,7 @@ img,video {
 }
 #gotop span {
 	display:block;
-	color:#fff
+	color:purple
 }
 #gotop span:hover {
 	color:#aaa
@@ -460,9 +460,10 @@ figure {
 	border:0
 }
 .date {
-	color:#fff;
+	color:#eee;
 	line-height:3em;
 	text-align:right
+	font-weight:normal;
 }
 pre,code {
 	font-family:DOS,Monaco,Menlo,Consolas,"Courier New",monospace!important

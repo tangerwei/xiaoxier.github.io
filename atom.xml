@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxier.github.io/"/>
-  <updated>2016-05-28T12:35:32.000Z</updated>
+  <updated>2016-05-28T12:40:57.000Z</updated>
   <id>https://xiaoxier.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xiaoxier.github.io/2016/01/30/%E5%AF%B9%E8%B1%A1/"/>
     <id>https://xiaoxier.github.io/2016/01/30/对象/</id>
     <published>2016-01-29T16:00:00.000Z</published>
-    <updated>2016-05-28T12:35:32.000Z</updated>
+    <updated>2016-05-28T12:40:57.000Z</updated>
     
     <content type="html">&lt;p&gt;工厂模式-构造函数模式-原型模式-混合模式-动态原型模式&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -73,14 +73,13 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://xiaoxier.github.io/2011/11/15/return/"/>
-    <id>https://xiaoxier.github.io/2011/11/15/return/</id>
-    <published>2011-11-14T16:00:00.000Z</published>
-    <updated>2016-05-28T08:27:10.000Z</updated>
+    <title>renturn基础用法</title>
+    <link href="https://xiaoxier.github.io/2015/01/31/return/"/>
+    <id>https://xiaoxier.github.io/2015/01/31/return/</id>
+    <published>2015-01-30T16:00:00.000Z</published>
+    <updated>2016-05-28T12:42:21.000Z</updated>
     
-    <content type="html">&lt;p&gt; renturn&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
 &lt;p&gt;二、return：返回值&lt;/p&gt;
 &lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
@@ -96,10 +95,18 @@
     
     <summary type="html">
     
-      &lt;p&gt; renturn&lt;/p&gt;
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
+&lt;p&gt;二、return：返回值&lt;/p&gt;
+&lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
+&lt;p&gt;2
     
     </summary>
     
+      <category term="JS" scheme="https://xiaoxier.github.io/categories/JS/"/>
+    
+    
+      <category term="return" scheme="https://xiaoxier.github.io/tags/return/"/>
     
   </entry>
   
@@ -108,7 +115,7 @@
     <link href="https://xiaoxier.github.io/2011/03/02/hell/"/>
     <id>https://xiaoxier.github.io/2011/03/02/hell/</id>
     <published>2011-03-01T16:00:00.000Z</published>
-    <updated>2016-05-28T12:31:39.000Z</updated>
+    <updated>2016-05-28T12:38:43.000Z</updated>
     
     <content type="html">&lt;p&gt;  搭建Github静态博客&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;

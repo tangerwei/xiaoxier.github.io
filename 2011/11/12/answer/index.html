@@ -6,7 +6,9 @@
   <title>web前端</title>
   <meta name="author" content="龙儿">
   
-  <meta name="description" content="经典题目">
+  <meta name="description" content="经典题目
+前言如果大家觉得自己JS很牛的话，不妨来试试
+题目">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -112,9 +114,9 @@
 	  		
 
 	  <h3 id="经典题目"><a href="#经典题目" class="headerlink" title="经典题目"></a>经典题目</h3><hr>
-<a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果大家觉得自己JS很牛的话，不妨来试试</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">return typeof arguments;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><a id="more"></a>
+<p>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">return typeof arguments;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
 <p>答案：’object’<br>arguments 是对象，虽然像数组<br>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var f = function g()&#123; return 23; &#125;;</span><br><span class="line">typeof g();</span><br></pre></td></tr></table></figure></p>
 <p>答案：Error<br>g未定义。<br>在 JS 里，声明函数只有 2 种方法：<br>第 1 种： function foo(){…} （函数声明）<br>第 2 种： var foo = function(){…} （等号后面必须是匿名函数，这句实质是函数表达式）</p>
 <p>除此之外，类似于 var foo = function bar(){…} 这样的东西统一按 2 方法处理，即在函数外部无法通过 bar 访问到函数，因为这已经变成了一个表达式。</p>

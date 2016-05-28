@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaoxier.github.io/about/index.html</loc>
+    
+    <lastmod>2016-05-28T14:11:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiaoxier.github.io/2011/03/02/hell/</loc>
     
     <lastmod>2016-05-28T13:43:04.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://xiaoxier.github.io/tags/index.html</loc>
     
     <lastmod>2016-05-28T11:47:04.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiaoxier.github.io/about/index.html</loc>
-    
-    <lastmod>2016-05-28T11:42:59.000Z</lastmod>
     
   </url>
   

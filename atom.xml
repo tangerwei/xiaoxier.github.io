@@ -36,13 +36,12 @@
     <link href="https://xiaoxier.github.io/2016/05/27/%E5%AF%B9%E8%B1%A1/"/>
     <id>https://xiaoxier.github.io/2016/05/27/对象/</id>
     <published>2016-05-27T01:33:23.000Z</published>
-    <updated>2016-05-28T10:07:34.000Z</updated>
+    <updated>2016-05-28T10:08:47.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;date: 2011-11-13&lt;br&gt;title: 面向对象基础讲解&lt;/p&gt;
 &lt;h2 id=&quot;categories-JS&quot;&gt;&lt;a href=&quot;#categories-JS&quot; class=&quot;headerlink&quot; title=&quot;categories: JS&quot;&gt;&lt;/a&gt;categories: JS&lt;/h2&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt; JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)&lt;/p&gt;
- &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
+&lt;h3 id=&quot;JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot;&gt;&lt;a href=&quot;#JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot; class=&quot;headerlink&quot; title=&quot;JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)&quot;&gt;&lt;/a&gt;JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)&lt;/h3&gt; &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
 
 &lt;p&gt; 工厂模式&lt;/p&gt;
 &lt;pre&gt;  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。&lt;/pre&gt;

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxier.github.io/"/>
-  <updated>2016-05-28T08:27:10.000Z</updated>
+  <updated>2016-05-28T10:16:24.000Z</updated>
   <id>https://xiaoxier.github.io/</id>
   
   <author>
@@ -17,43 +17,13 @@
   
   <entry>
     <title></title>
-    <link href="https://xiaoxier.github.io/2011/11/15/return/"/>
-    <id>https://xiaoxier.github.io/2011/11/15/return/</id>
-    <published>2011-11-14T16:00:00.000Z</published>
-    <updated>2016-05-28T08:27:10.000Z</updated>
+    <link href="https://xiaoxier.github.io/2016/05/27/%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://xiaoxier.github.io/2016/05/27/对象/</id>
+    <published>2016-05-27T01:33:23.000Z</published>
+    <updated>2016-05-28T10:16:24.000Z</updated>
     
-    <content type="html">&lt;p&gt; renturn&lt;/p&gt;
+    <content type="html">&lt;p&gt;title: 面向对象基础讲解&lt;br&gt;date: 2011-11-13&lt;br&gt;categories: JS&lt;br&gt;tags:&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
-&lt;p&gt;二、return：返回值&lt;/p&gt;
-&lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
-&lt;p&gt;2）如果没有写return，所有函数默认返回值：未定义；&lt;/p&gt;
-&lt;p&gt;3）return只能有一个返回值，同时跳出函数，不再执行代码。&lt;/p&gt;
-&lt;p&gt;3）可以控制函数体中的代码执行到指定就结束&lt;/p&gt;
-&lt;p&gt;三、return作用&lt;/p&gt;
-&lt;p&gt;return false；1.阻止默认事件行为。终止符；2.return false 只在当前函数有效，不会影响其他外部函数的执行。&lt;/p&gt;
-&lt;p&gt;return true；执行符&lt;/p&gt;
-&lt;p&gt;return；     把控制权返回给页面&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; renturn&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象基础讲解</title>
-    <link href="https://xiaoxier.github.io/2011/11/13/%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://xiaoxier.github.io/2011/11/13/对象/</id>
-    <published>2011-11-12T16:00:00.000Z</published>
-    <updated>2016-05-28T10:15:40.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot;&gt;&lt;a href=&quot;#JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot; class=&quot;headerlink&quot; title=&quot;JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)&quot;&gt;&lt;/a&gt;JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)&lt;/h3&gt; &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
 
 &lt;p&gt; 工厂模式&lt;/p&gt;
@@ -90,12 +60,40 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot;&gt;&lt;a href=&quot;#JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式&quot; class=&quot;headerlink&quot; tit
+      &lt;p&gt;title: 面向对象基础讲解&lt;br&gt;date: 2011-11-13&lt;br&gt;categories: JS&lt;br&gt;tags:&lt;/p&gt;
     
     </summary>
     
-      <category term="JS" scheme="https://xiaoxier.github.io/categories/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://xiaoxier.github.io/2011/11/15/return/"/>
+    <id>https://xiaoxier.github.io/2011/11/15/return/</id>
+    <published>2011-11-14T16:00:00.000Z</published>
+    <updated>2016-05-28T08:27:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt; renturn&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
+&lt;p&gt;二、return：返回值&lt;/p&gt;
+&lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
+&lt;p&gt;2）如果没有写return，所有函数默认返回值：未定义；&lt;/p&gt;
+&lt;p&gt;3）return只能有一个返回值，同时跳出函数，不再执行代码。&lt;/p&gt;
+&lt;p&gt;3）可以控制函数体中的代码执行到指定就结束&lt;/p&gt;
+&lt;p&gt;三、return作用&lt;/p&gt;
+&lt;p&gt;return false；1.阻止默认事件行为。终止符；2.return false 只在当前函数有效，不会影响其他外部函数的执行。&lt;/p&gt;
+&lt;p&gt;return true；执行符&lt;/p&gt;
+&lt;p&gt;return；     把控制权返回给页面&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; renturn&lt;/p&gt;
+    
+    </summary>
     
     
   </entry>

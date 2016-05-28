@@ -77,9 +77,10 @@
     <link href="https://xiaoxier.github.io/2015/01/31/return/"/>
     <id>https://xiaoxier.github.io/2015/01/31/return/</id>
     <published>2015-01-30T16:00:00.000Z</published>
-    <updated>2016-05-28T12:42:21.000Z</updated>
+    <updated>2016-05-28T12:44:09.000Z</updated>
     
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;p&gt;return 语法-作用&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
 &lt;p&gt;二、return：返回值&lt;/p&gt;
 &lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
@@ -95,11 +96,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。&lt;/p&gt;
-&lt;p&gt;二、return：返回值&lt;/p&gt;
-&lt;p&gt;1）fn1() ==&amp;gt; return 后面的值；匿名函数返回函数代码块。&lt;/p&gt;
-&lt;p&gt;2
+      &lt;p&gt;return 语法-作用&lt;/p&gt;
     
     </summary>
     

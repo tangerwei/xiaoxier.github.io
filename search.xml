@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[JS面向对象基础讲解]]></title>
+      <url>https://xiaoxier.github.io/2016/01/30/%E5%AF%B9%E8%B1%A1/</url>
+      <content type="html"><![CDATA[<p>工厂模式-构造函数模式-原型模式-混合模式-动态原型模式</p>
+<a id="more"></a>
+ <pre>  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。</pre>
+
+<p> 工厂模式</p>
+<pre>  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。</pre>
+
+
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function createBlog(name,sex) &#123;</span><br><span class="line">var o = new Object();</span><br><span class="line">o.name = name;</span><br><span class="line">o.sex = sex;</span><br><span class="line">o.saysexl= function() &#123;</span><br><span class="line">alert(this.sex);</span><br><span class="line">&#125;</span><br><span class="line">return o;</span><br><span class="line">&#125;</span><br><span class="line">var blog1 = createBlog(&apos;longer&apos;,&apos;girl&apos;);</span><br></pre></td></tr></table></figure>
+</code></pre><pre>  可以看到工厂模式的实现方法非常简单，解决了创建多个相似对象的问题，但是工厂模式却无从识别对象的类型，因为全部都是Object，不像Date、Array等，因此出现了构造函数模式。</pre>
+ 构造函数模式
+
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Blog(name, sex) &#123;</span><br><span class="line">var o = new Object();</span><br><span class="line">o.name = name;</span><br><span class="line">o.sex = sex;</span><br><span class="line">o.saysex= function() &#123;</span><br><span class="line">alert(this.sex);</span><br><span class="line">&#125;</span><br><span class="line">return o;</span><br><span class="line">&#125;</span><br><span class="line">var blog = new Blog(&apos;longer&apos;,&apos;girl&apos;)</span><br><span class="line">console.log(blog instanceof Blog)</span><br></pre></td></tr></table></figure>
+
+<pre>没有显示的创建对象
+直接将属性和方法赋值给了this对象
+没有return语句
+使用new创建对象
+能够识别对象（这正是构造函数模式胜于工厂模式的地方）
+使用构造函数的最大的问题在于每次创建实例的时候都要重新创建一次方法（理论上每次创建对象的时候对象的属性均不同，而对象的方法是相同的），</pre>
+原型模式
+<pre>我们创建的每个函数都有prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。使用原型对象的好处就是可以让所有对象实例共享它所包含的属性及方法。</pre>
+
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  function Blog() &#123;</span><br><span class="line">&#125;</span><br><span class="line">Blog.prototype.name = &apos;longer&apos;;</span><br><span class="line">Blog.prototype.sex =     &apos;girl&apos;;</span><br><span class="line">Blog.prototype.friend = [&apos;fr1&apos;, &apos;fr2&apos;, &apos;fr3&apos;, &apos;fr4&apos;];</span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(this.name + this.sex + this.friend );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 以下为测试代码</span><br><span class="line">var blog = new Blog(),</span><br><span class="line">blog2 = new Blog();</span><br><span class="line">blog.alertInfo();  //   wuyuchanghttp://tools.jb51.net/fr1,fr2,fr3,fr4</span><br><span class="line">blog2.alertInfo();  // wuyuchanghttp://tools.jb51.net/fr1,fr2,fr3,fr4</span><br><span class="line">blog.name = &apos;long&apos;;</span><br><span class="line">blog.url = &apos;male&apos;;</span><br><span class="line">blog.friend.pop();</span><br><span class="line">blog2.name = &apos;wyc2&apos;;</span><br><span class="line">blog2.url = &apos;http://+++.com&apos;;</span><br><span class="line">blog.alertInfo();  // wyc1http://***.comfr1,fr2,fr3</span><br><span class="line">blog2.alertInfo();  //    wyc2http://+++.comfr1,fr2,fr3</span><br></pre></td></tr></table></figure>
+</code></pre><pre>  它省略了构造函数传递初始化参数这一环节，结果所有实例在默认情况下都取得了相同的属性值，这样非常不方便</pre>
+ 混合模式
+
+     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Blog(name, url, friend) &#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.url = url;</span><br><span class="line">this.friend = friend;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(this.name + this.url + this.friend);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var blog = new Blog(&apos;wuyuchang&apos;, &apos;http://tools.jb51.net/&apos;, [&apos;fr1&apos;, &apos;fr2&apos;, &apos;fr3&apos;]),</span><br><span class="line">blog2 = new Blog(&apos;wyc&apos;, &apos;http://**.com&apos;, [&apos;a&apos;, &apos;b&apos;]);</span><br><span class="line"> </span><br><span class="line">blog.friend.pop();</span><br><span class="line"> blog.alertInfo();  // wuyuchanghttp://tools.jb51.net/fr1,fr2</span><br><span class="line"> blog2.alertInfo();//wychttp://**.coma,b</span><br></pre></td></tr></table></figure>
+
+<pre>  混合模式中构造函数模式用于定义实例属性，而原型模式用于定义方法和共享属性。每个实例都会有自己的一份实例属性，但同时又共享着方法，最大限度的节省了内存。另外这种模式还支持传递初始参数。优点甚多。这种模式在ECMAScript中是使用最广泛、认同度最高的一种创建自定义对象的方法。,</pre>
+ 动态原型模式
+<pre>动态原型模式将所有信息封装在了构造函数中，而通过构造函数中初始化原型（仅第一个对象实例化时初始化原型），这个可以通过判断该方法是否有效而选择是否需要初始化原型。</pre>
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">function Blog(name, url) &#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.url = url;</span><br><span class="line"> </span><br><span class="line">if (typeof this.alertInfo != &apos;function&apos;) &#123;</span><br><span class="line">// 这段代码只执行了一次</span><br><span class="line">alert(&apos;exe time&apos;);</span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(thia.name + this.url);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var blog = new Blog(&apos;longer&apos;, &apos;http://tools.jb51.net&apos;),</span><br><span class="line">blog2 = new Blog(&apos;wyc&apos;, &apos;http:***.com&apos;);</span><br></pre></td></tr></table></figure>
+<p> <pre>每次创建实例都会重新执行函数，我们可以通过判断类型是否是函数来选择是否执行函数</pre></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[renturn基础用法]]></title>
+      <url>https://xiaoxier.github.io/2015/01/31/return/</url>
+      <content type="html"><![CDATA[<p>return 语法-作用</p>
+<a id="more"></a>
+<p>一、renturn 表达式；语句结束函数执行，返回调用函数，表达式的值作为函数的结果。</p>
+<p>二、return：返回值</p>
+<p>1）fn1() ==&gt; return 后面的值；匿名函数返回函数代码块。</p>
+<p>2）如果没有写return，所有函数默认返回值：未定义；</p>
+<p>3）return只能有一个返回值，同时跳出函数，不再执行代码。</p>
+<p>3）可以控制函数体中的代码执行到指定就结束</p>
+<p>三、return作用</p>
+<p>return false；1.阻止默认事件行为。终止符；2.return false 只在当前函数有效，不会影响其他外部函数的执行。</p>
+<p>return true；执行符</p>
+<p>return；     把控制权返回给页面</p>
+<p></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo]]></title>
+      <url>https://xiaoxier.github.io/2011/03/02/hell/</url>
+      <content type="html"><![CDATA[<p>  搭建Github静态博客</p>
+<a id="more"></a>
+<h1 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h1><h2 id="1-1安装Git"><a href="#1-1安装Git" class="headerlink" title="1.1安装Git"></a>1.1安装Git</h2><p>请参考【1】</p>
+<h2 id="1-2安装node-js"><a href="#1-2安装node-js" class="headerlink" title="1.2安装node.js"></a>1.2安装node.js</h2><p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>安装时直接保持默认配置即可</p>
+<h1 id="2-配置Github"><a href="#2-配置Github" class="headerlink" title="2.配置Github"></a>2.配置Github</h1><h2 id="1-1建立Repository"><a href="#1-1建立Repository" class="headerlink" title="1.1建立Repository"></a>1.1建立Repository</h2><p>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
+<h2 id="1-2配置SSH-Key"><a href="#1-2配置SSH-Key" class="headerlink" title="1.2配置SSH-Key"></a>1.2配置SSH-Key</h2><p>参考【1】</p>
+<h1 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h1><p>关于Hexotic的安装配置过程，请以官方Hexo【2】给出的步骤为准。</p>
+<h2 id="3-1Installation"><a href="#3-1Installation" class="headerlink" title="3.1Installation"></a>3.1Installation</h2><p>打开Git命令行，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-Qucik-Start"><a href="#3-2-Qucik-Start" class="headerlink" title="3.2 Qucik Start"></a>3.2 Qucik Start</h2><h6 id="1-Setup-your-blog"><a href="#1-Setup-your-blog" class="headerlink" title="1. Setup your blog"></a>1. Setup your blog</h6><p>在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">[info] Copying data</span><br><span class="line">[info] You are almost done! Don&apos;t forget to run `npm install` before you start b</span><br><span class="line">logging with Hexo!</span><br></pre></td></tr></table></figure>
+<p>Hexo随后会自动在目标文件夹建立网站所需要的文件。然后按照提示，运行 npm install（在 /D/Hexo下）</p>
+<p>会在D:\Hexo目录中安装 node_modules。</p>
+<h6 id="2-Start-the-server"><a href="#2-Start-the-server" class="headerlink" title="2.Start the server"></a>2.Start the server</h6><p>运行下面的命令（在 /D/Hexo下）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>表明Hexo Server已经启动了，在浏览器中打开 <a href="http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。" target="_blank" rel="external">http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。</a></p>
+<p>你可以按Ctrl+C 停止Server。</p>
+<h6 id="3-Creat-a-new-post"><a href="#3-Creat-a-new-post" class="headerlink" title="3.Creat a new post"></a>3.Creat a new post</h6><p>新打开一个git bash命令行窗口，cd到/D/Hexo下，执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;</span><br><span class="line">[info] File created at d:\Hexo\source\_posts\My-New-Post.md</span><br></pre></td></tr></table></figure>
+<p>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “My New Post”。</p>
+<h4 id="Note："><a href="#Note：" class="headerlink" title="Note："></a>Note：</h4><p>有一个问题，发现 “My New Post” 被发了2遍，在Hexo server所在的git bash窗口也能看到create了2次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br><span class="line">[create] d:\Hexo\source\_posts\My-New-Post.md</span><br><span class="line">[create] d:\Hexo\source\_posts\My-New-Post.md</span><br></pre></td></tr></table></figure>
+<h1 id="Have-Fun"><a href="#Have-Fun" class="headerlink" title="Have Fun!!!"></a>Have Fun!!!</h1>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[经典题目]]></title>
+      <url>https://xiaoxier.github.io/2011/01/30/answer/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果大家觉得自己JS很牛的话，不妨来试试</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><a id="more"></a>
+<p>1.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">return typeof arguments;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>答案：’object’<br>arguments 是对象，虽然像数组<br>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var f = function g()&#123; return 23; &#125;;</span><br><span class="line">typeof g();</span><br></pre></td></tr></table></figure></p>
+<p>答案：Error<br>g未定义。<br>在 JS 里，声明函数只有 2 种方法：<br>第 1 种： function foo(){…} （函数声明）<br>第 2 种： var foo = function(){…} （等号后面必须是匿名函数，这句实质是函数表达式）</p>
+<p>除此之外，类似于 var foo = function bar(){…} 这样的东西统一按 2 方法处理，即在函数外部无法通过 bar 访问到函数，因为这已经变成了一个表达式。</p>
+<p>但为什么不是 “undefined”？<br>这里如果求 typeof g ，会返回 undefined，但求的是 g()，所以会去先去调用函数 g，这里就会直接抛出异常，所以是 Error。<br>3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function(x)&#123;</span><br><span class="line">delete x;</span><br><span class="line">return x;</span><br><span class="line">&#125;)(1);</span><br></pre></td></tr></table></figure></p>
+<p>答案;1<br>delete操作符用于删除对象的成员变量，不能删除函数的参数<br>4.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var y = 1, x = y = typeof x;</span><br><span class="line">x;</span><br></pre></td></tr></table></figure></p>
+<p>答案：‘undefined’<br>先定义了y并赋值为1，然后typeof赋值给y，此时x未定义，故为‘undefined’，最后将y的值赋给x<br>5.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function f(f)&#123;</span><br><span class="line">return typeof f();</span><br><span class="line">&#125;)(function()&#123; return 1; &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>答案：‘number’<br>在函数里的f（）其实是参数的那个f的执行结果，所以是typeof 1，也就是‘number’<br>6.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">bar: function() &#123; return this.baz; &#125;,</span><br><span class="line">baz: 1</span><br><span class="line">&#125;;</span><br><span class="line">(function()&#123;</span><br><span class="line">return typeof arguments[0]();</span><br><span class="line">&#125;)(foo.bar);</span><br></pre></td></tr></table></figure></p>
+<p>答案：‘undefined’</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

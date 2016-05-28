@@ -155,10 +155,7 @@ var _hmt = _hmt || [];
 		</div>
 	
 	
-		<pre>  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。</pre>
-
-<p> 工厂模式</p>
-<pre>  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。</pre>
+		<p>工厂模式-构造函数模式-原型模式-混合模式-动态原型模式</p>
 	
 	</div>
   <a type="button" href="/2016/01/30/对象/#more" class="btn btn-default more">阅读此文</a>
@@ -218,27 +215,6 @@ var _hmt = _hmt || [];
 	
 	
 		<p>  搭建Github静态博客</p>
-<h1 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h1><h2 id="1-1安装Git"><a href="#1-1安装Git" class="headerlink" title="1.1安装Git"></a>1.1安装Git</h2><p>请参考【1】</p>
-<h2 id="1-2安装node-js"><a href="#1-2安装node-js" class="headerlink" title="1.2安装node.js"></a>1.2安装node.js</h2><p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>安装时直接保持默认配置即可</p>
-<h1 id="2-配置Github"><a href="#2-配置Github" class="headerlink" title="2.配置Github"></a>2.配置Github</h1><h2 id="1-1建立Repository"><a href="#1-1建立Repository" class="headerlink" title="1.1建立Repository"></a>1.1建立Repository</h2><p>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
-<h2 id="1-2配置SSH-Key"><a href="#1-2配置SSH-Key" class="headerlink" title="1.2配置SSH-Key"></a>1.2配置SSH-Key</h2><p>参考【1】</p>
-<h1 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h1><p>关于Hexotic的安装配置过程，请以官方Hexo【2】给出的步骤为准。</p>
-<h2 id="3-1Installation"><a href="#3-1Installation" class="headerlink" title="3.1Installation"></a>3.1Installation</h2><p>打开Git命令行，执行如下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-Qucik-Start"><a href="#3-2-Qucik-Start" class="headerlink" title="3.2 Qucik Start"></a>3.2 Qucik Start</h2><h6 id="1-Setup-your-blog"><a href="#1-Setup-your-blog" class="headerlink" title="1. Setup your blog"></a>1. Setup your blog</h6><p>在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了D:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">[info] Copying data</span><br><span class="line">[info] You are almost done! Don&apos;t forget to run `npm install` before you start b</span><br><span class="line">logging with Hexo!</span><br></pre></td></tr></table></figure>
-<p>Hexo随后会自动在目标文件夹建立网站所需要的文件。然后按照提示，运行 npm install（在 /D/Hexo下）</p>
-<p>会在D:\Hexo目录中安装 node_modules。</p>
-<h6 id="2-Start-the-server"><a href="#2-Start-the-server" class="headerlink" title="2.Start the server"></a>2.Start the server</h6><p>运行下面的命令（在 /D/Hexo下）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>表明Hexo Server已经启动了，在浏览器中打开 <a href="http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。" target="_blank" rel="external">http://localhost:4000/，这时可以看到Hexo已为你生成了一篇blog。</a></p>
-<p>你可以按Ctrl+C 停止Server。</p>
-<h6 id="3-Creat-a-new-post"><a href="#3-Creat-a-new-post" class="headerlink" title="3.Creat a new post"></a>3.Creat a new post</h6><p>新打开一个git bash命令行窗口，cd到/D/Hexo下，执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;</span><br><span class="line">[info] File created at d:\Hexo\source\_posts\My-New-Post.md</span><br></pre></td></tr></table></figure>
-<p>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “My New Post”。</p>
-<h4 id="Note："><a href="#Note：" class="headerlink" title="Note："></a>Note：</h4><p>有一个问题，发现 “My New Post” 被发了2遍，在Hexo server所在的git bash窗口也能看到create了2次。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br><span class="line">[create] d:\Hexo\source\_posts\My-New-Post.md</span><br><span class="line">[create] d:\Hexo\source\_posts\My-New-Post.md</span><br></pre></td></tr></table></figure>
-<h1 id="Have-Fun"><a href="#Have-Fun" class="headerlink" title="Have Fun!!!"></a>Have Fun!!!</h1>
 	
 	</div>
   <a type="button" href="/2011/03/02/hell/#more" class="btn btn-default more">阅读此文</a>
@@ -328,11 +304,11 @@ var _hmt = _hmt || [];
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/工厂模式/">工厂模式<span>1</span></a></li>
-		
-			<li><a href="/tags/答案/">答案<span>1</span></a></li>
+			<li><a href="/tags/模式/">模式<span>1</span></a></li>
 		
 			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
+		
+			<li><a href="/tags/答案/">答案<span>1</span></a></li>
 		
 		 
 		</ul>

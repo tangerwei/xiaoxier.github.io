@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxier.github.io/"/>
-  <updated>2016-05-28T12:28:14.000Z</updated>
+  <updated>2016-05-28T12:35:32.000Z</updated>
   <id>https://xiaoxier.github.io/</id>
   
   <author>
@@ -20,17 +20,18 @@
     <link href="https://xiaoxier.github.io/2016/01/30/%E5%AF%B9%E8%B1%A1/"/>
     <id>https://xiaoxier.github.io/2016/01/30/对象/</id>
     <published>2016-01-29T16:00:00.000Z</published>
-    <updated>2016-05-28T12:28:14.000Z</updated>
+    <updated>2016-05-28T12:35:32.000Z</updated>
     
-    <content type="html"> &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
+    <content type="html">&lt;p&gt;工厂模式-构造函数模式-原型模式-混合模式-动态原型模式&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+ &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
 
 &lt;p&gt; 工厂模式&lt;/p&gt;
 &lt;pre&gt;  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。&lt;/pre&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
-    &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function createBlog(name,sex) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var o = new Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.sex = sex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.saysexl= function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(this.sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return o;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var blog1 = createBlog(&amp;apos;longer&amp;apos;,&amp;apos;girl&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;pre&gt;  可以看到工厂模式的实现方法非常简单，解决了创建多个相似对象的问题，但是工厂模式却无从识别对象的类型，因为全部都是Object，不像Date、Array等，因此出现了构造函数模式。&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function createBlog(name,sex) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var o = new Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.sex = sex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.saysexl= function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(this.sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return o;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var blog1 = createBlog(&amp;apos;longer&amp;apos;,&amp;apos;girl&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;  可以看到工厂模式的实现方法非常简单，解决了创建多个相似对象的问题，但是工厂模式却无从识别对象的类型，因为全部都是Object，不像Date、Array等，因此出现了构造函数模式。&lt;/pre&gt;
  构造函数模式
 
     &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function Blog(name, sex) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var o = new Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.sex = sex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o.saysex= function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(this.sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return o;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var blog = new Blog(&amp;apos;longer&amp;apos;,&amp;apos;girl&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(blog instanceof Blog)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -60,17 +61,14 @@
     
     <summary type="html">
     
-      &lt;pre&gt;  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。&lt;/pre&gt;
-
-&lt;p&gt; 工厂模式&lt;/p&gt;
-&lt;pre&gt;  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。&lt;/pre&gt;
+      &lt;p&gt;工厂模式-构造函数模式-原型模式-混合模式-动态原型模式&lt;/p&gt;
     
     </summary>
     
       <category term="JS" scheme="https://xiaoxier.github.io/categories/JS/"/>
     
     
-      <category term="工厂模式" scheme="https://xiaoxier.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+      <category term="模式" scheme="https://xiaoxier.github.io/tags/%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -110,9 +108,10 @@
     <link href="https://xiaoxier.github.io/2011/03/02/hell/"/>
     <id>https://xiaoxier.github.io/2011/03/02/hell/</id>
     <published>2011-03-01T16:00:00.000Z</published>
-    <updated>2016-05-28T12:30:13.000Z</updated>
+    <updated>2016-05-28T12:31:39.000Z</updated>
     
     <content type="html">&lt;p&gt;  搭建Github静态博客&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;1-环境&quot;&gt;&lt;a href=&quot;#1-环境&quot; class=&quot;headerlink&quot; title=&quot;1.环境&quot;&gt;&lt;/a&gt;1.环境&lt;/h1&gt;&lt;h2 id=&quot;1-1安装Git&quot;&gt;&lt;a href=&quot;#1-1安装Git&quot; class=&quot;headerlink&quot; title=&quot;1.1安装Git&quot;&gt;&lt;/a&gt;1.1安装Git&lt;/h2&gt;&lt;p&gt;请参考【1】&lt;/p&gt;
 &lt;h2 id=&quot;1-2安装node-js&quot;&gt;&lt;a href=&quot;#1-2安装node-js&quot; class=&quot;headerlink&quot; title=&quot;1.2安装node.js&quot;&gt;&lt;/a&gt;1.2安装node.js&lt;/h2&gt;&lt;p&gt;下载：&lt;a href=&quot;http://nodejs.org/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://nodejs.org/download/&lt;/a&gt;&lt;br&gt;安装时直接保持默认配置即可&lt;/p&gt;
 &lt;h1 id=&quot;2-配置Github&quot;&gt;&lt;a href=&quot;#2-配置Github&quot; class=&quot;headerlink&quot; title=&quot;2.配置Github&quot;&gt;&lt;/a&gt;2.配置Github&lt;/h1&gt;&lt;h2 id=&quot;1-1建立Repository&quot;&gt;&lt;a href=&quot;#1-1建立Repository&quot; class=&quot;headerlink&quot; title=&quot;1.1建立Repository&quot;&gt;&lt;/a&gt;1.1建立Repository&lt;/h2&gt;&lt;p&gt;建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】&lt;/p&gt;
@@ -138,7 +137,6 @@
     <summary type="html">
     
       &lt;p&gt;  搭建Github静态博客&lt;/p&gt;
-&lt;h1 id=&quot;1-环境&quot;&gt;&lt;a href=&quot;#1-环境&quot; class=&quot;headerlink&quot; title=&quot;1.环境&quot;&gt;&lt;/a&gt;1.环境&lt;/h1&gt;&lt;h2 id=&quot;1-1安装Git&quot;&gt;&lt;a href=&quot;#1-1安装Git&quot; class
     
     </summary>
     

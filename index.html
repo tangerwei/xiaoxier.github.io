@@ -136,62 +136,6 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2016/05/28/index/" >JS</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2016-05-28  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		
-	
-	</div>
-  <a type="button" href="/2016/05/28/index/#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2016/05/27/对象/" ></a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2016-05-27  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<hr>
-<p>date: 2011-11-13<br>title: 面向对象基础讲解</p>
-<h2 id="categories-JS"><a href="#categories-JS" class="headerlink" title="categories: JS"></a>categories: JS</h2>
-	
-	</div>
-  <a type="button" href="/2016/05/27/对象/#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/2011/11/15/return/" ></a>
 		</h3>
 		</div>
@@ -210,6 +154,66 @@ var _hmt = _hmt || [];
 	
 	</div>
   <a type="button" href="/2011/11/15/return/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2011/11/13/对象/" >面向对象基础讲解</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2011-11-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<a id="more"></a>
+<h3 id="JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式"><a href="#JS面向对象基础讲解-工厂模式、构造函数模式、原型模式、混合模式、动态原型模式" class="headerlink" title="JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)"></a>JS面向对象基础讲解(工厂模式、构造函数模式、原型模式、混合模式、动态原型模式)</h3> <pre>  面向对象可以把程序中的关键模块都视为对象，而模块拥有属性及方法。这样我们如果把一些属性及方法封装起来，日后使用将非常方便，也可以避免繁琐重复的工作。接下来将为大家讲解在JS中面向对象的实现。</pre>
+
+<p> 工厂模式</p>
+<pre>  工厂模式是软件工程领域一种广为人知的设计模式，而由于在ECMAScript中无法创建类，因此用函数封装以特定接口创建对象。其实现方法非常简单，也就是在函数内创建一个对象，给对象赋予属性及方法再将对象返回即可。</pre>
+
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function createBlog(name,sex) &#123;</span><br><span class="line">var o = new Object();</span><br><span class="line">o.name = name;</span><br><span class="line">o.sex = sex;</span><br><span class="line">o.saysexl= function() &#123;</span><br><span class="line">alert(this.sex);</span><br><span class="line">&#125;</span><br><span class="line">return o;</span><br><span class="line">&#125;</span><br><span class="line">var blog1 = createBlog(&apos;longer&apos;,&apos;girl&apos;);</span><br></pre></td></tr></table></figure>
+</code></pre><pre>  可以看到工厂模式的实现方法非常简单，解决了创建多个相似对象的问题，但是工厂模式却无从识别对象的类型，因为全部都是Object，不像Date、Array等，因此出现了构造函数模式。</pre>
+ 构造函数模式
+
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Blog(name, sex) &#123;</span><br><span class="line">var o = new Object();</span><br><span class="line">o.name = name;</span><br><span class="line">o.sex = sex;</span><br><span class="line">o.saysex= function() &#123;</span><br><span class="line">alert(this.sex);</span><br><span class="line">&#125;</span><br><span class="line">return o;</span><br><span class="line">&#125;</span><br><span class="line">var blog = new Blog(&apos;longer&apos;,&apos;girl&apos;)</span><br><span class="line">console.log(blog instanceof Blog)</span><br></pre></td></tr></table></figure>
+
+<pre>没有显示的创建对象
+直接将属性和方法赋值给了this对象
+没有return语句
+使用new创建对象
+能够识别对象（这正是构造函数模式胜于工厂模式的地方）
+使用构造函数的最大的问题在于每次创建实例的时候都要重新创建一次方法（理论上每次创建对象的时候对象的属性均不同，而对象的方法是相同的），</pre>
+原型模式
+<pre>我们创建的每个函数都有prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。使用原型对象的好处就是可以让所有对象实例共享它所包含的属性及方法。</pre>
+
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  function Blog() &#123;</span><br><span class="line">&#125;</span><br><span class="line">Blog.prototype.name = &apos;longer&apos;;</span><br><span class="line">Blog.prototype.sex =     &apos;girl&apos;;</span><br><span class="line">Blog.prototype.friend = [&apos;fr1&apos;, &apos;fr2&apos;, &apos;fr3&apos;, &apos;fr4&apos;];</span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(this.name + this.sex + this.friend );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 以下为测试代码</span><br><span class="line">var blog = new Blog(),</span><br><span class="line">blog2 = new Blog();</span><br><span class="line">blog.alertInfo();  //   wuyuchanghttp://tools.jb51.net/fr1,fr2,fr3,fr4</span><br><span class="line">blog2.alertInfo();  // wuyuchanghttp://tools.jb51.net/fr1,fr2,fr3,fr4</span><br><span class="line">blog.name = &apos;long&apos;;</span><br><span class="line">blog.url = &apos;male&apos;;</span><br><span class="line">blog.friend.pop();</span><br><span class="line">blog2.name = &apos;wyc2&apos;;</span><br><span class="line">blog2.url = &apos;http://+++.com&apos;;</span><br><span class="line">blog.alertInfo();  // wyc1http://***.comfr1,fr2,fr3</span><br><span class="line">blog2.alertInfo();  //    wyc2http://+++.comfr1,fr2,fr3</span><br></pre></td></tr></table></figure>
+</code></pre><pre>  它省略了构造函数传递初始化参数这一环节，结果所有实例在默认情况下都取得了相同的属性值，这样非常不方便</pre>
+ 混合模式
+
+     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Blog(name, url, friend) &#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.url = url;</span><br><span class="line">this.friend = friend;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(this.name + this.url + this.friend);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var blog = new Blog(&apos;wuyuchang&apos;, &apos;http://tools.jb51.net/&apos;, [&apos;fr1&apos;, &apos;fr2&apos;, &apos;fr3&apos;]),</span><br><span class="line">blog2 = new Blog(&apos;wyc&apos;, &apos;http://**.com&apos;, [&apos;a&apos;, &apos;b&apos;]);</span><br><span class="line"> </span><br><span class="line">blog.friend.pop();</span><br><span class="line"> blog.alertInfo();  // wuyuchanghttp://tools.jb51.net/fr1,fr2</span><br><span class="line"> blog2.alertInfo();//wychttp://**.coma,b</span><br></pre></td></tr></table></figure>
+
+<pre>  混合模式中构造函数模式用于定义实例属性，而原型模式用于定义方法和共享属性。每个实例都会有自己的一份实例属性，但同时又共享着方法，最大限度的节省了内存。另外这种模式还支持传递初始参数。优点甚多。这种模式在ECMAScript中是使用最广泛、认同度最高的一种创建自定义对象的方法。,</pre>
+ 动态原型模式
+<pre>动态原型模式将所有信息封装在了构造函数中，而通过构造函数中初始化原型（仅第一个对象实例化时初始化原型），这个可以通过判断该方法是否有效而选择是否需要初始化原型。</pre>
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">function Blog(name, url) &#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.url = url;</span><br><span class="line"> </span><br><span class="line">if (typeof this.alertInfo != &apos;function&apos;) &#123;</span><br><span class="line">// 这段代码只执行了一次</span><br><span class="line">alert(&apos;exe time&apos;);</span><br><span class="line">Blog.prototype.alertInfo = function() &#123;</span><br><span class="line">alert(thia.name + this.url);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var blog = new Blog(&apos;longer&apos;, &apos;http://tools.jb51.net&apos;),</span><br><span class="line">blog2 = new Blog(&apos;wyc&apos;, &apos;http:***.com&apos;);</span><br></pre></td></tr></table></figure>
+<p> <pre>每次创建实例都会重新执行函数，我们可以通过判断类型是否是函数来选择是否执行函数</pre></p>
+
+	
+	</div>
+  <a type="button" href="/2011/11/13/对象/#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -300,6 +304,15 @@ var _hmt = _hmt || [];
 
 		
 			
+	<div class="widget">
+		<h4>分类</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/JS/">JS<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
 		
 			
 
@@ -310,15 +323,11 @@ var _hmt = _hmt || [];
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2016/05/28/index/" ><i class="fa fa-file-o"></i>JS</a>
-      </li>
-    
-      <li>
-        <a href="/2016/05/27/对象/" ><i class="fa fa-file-o"></i></a>
-      </li>
-    
-      <li>
         <a href="/2011/11/15/return/" ><i class="fa fa-file-o"></i></a>
+      </li>
+    
+      <li>
+        <a href="/2011/11/13/对象/" ><i class="fa fa-file-o"></i>面向对象基础讲解</a>
       </li>
     
       <li>

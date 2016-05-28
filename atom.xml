@@ -106,15 +106,13 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://xiaoxier.github.io/2011/11/11/hell/"/>
-    <id>https://xiaoxier.github.io/2011/11/11/hell/</id>
-    <published>2011-11-10T16:00:00.000Z</published>
-    <updated>2016-05-28T08:28:02.000Z</updated>
+    <title>Hexo</title>
+    <link href="https://xiaoxier.github.io/2011/03/02/hell/"/>
+    <id>https://xiaoxier.github.io/2011/03/02/hell/</id>
+    <published>2011-03-01T16:00:00.000Z</published>
+    <updated>2016-05-28T12:30:13.000Z</updated>
     
-    <content type="html">&lt;p&gt;  hexo&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;  搭建Github静态博客&lt;/p&gt;
+    <content type="html">&lt;p&gt;  搭建Github静态博客&lt;/p&gt;
 &lt;h1 id=&quot;1-环境&quot;&gt;&lt;a href=&quot;#1-环境&quot; class=&quot;headerlink&quot; title=&quot;1.环境&quot;&gt;&lt;/a&gt;1.环境&lt;/h1&gt;&lt;h2 id=&quot;1-1安装Git&quot;&gt;&lt;a href=&quot;#1-1安装Git&quot; class=&quot;headerlink&quot; title=&quot;1.1安装Git&quot;&gt;&lt;/a&gt;1.1安装Git&lt;/h2&gt;&lt;p&gt;请参考【1】&lt;/p&gt;
 &lt;h2 id=&quot;1-2安装node-js&quot;&gt;&lt;a href=&quot;#1-2安装node-js&quot; class=&quot;headerlink&quot; title=&quot;1.2安装node.js&quot;&gt;&lt;/a&gt;1.2安装node.js&lt;/h2&gt;&lt;p&gt;下载：&lt;a href=&quot;http://nodejs.org/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://nodejs.org/download/&lt;/a&gt;&lt;br&gt;安装时直接保持默认配置即可&lt;/p&gt;
 &lt;h1 id=&quot;2-配置Github&quot;&gt;&lt;a href=&quot;#2-配置Github&quot; class=&quot;headerlink&quot; title=&quot;2.配置Github&quot;&gt;&lt;/a&gt;2.配置Github&lt;/h1&gt;&lt;h2 id=&quot;1-1建立Repository&quot;&gt;&lt;a href=&quot;#1-1建立Repository&quot; class=&quot;headerlink&quot; title=&quot;1.1建立Repository&quot;&gt;&lt;/a&gt;1.1建立Repository&lt;/h2&gt;&lt;p&gt;建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】&lt;/p&gt;
@@ -139,10 +137,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;  hexo&lt;br&gt;
+      &lt;p&gt;  搭建Github静态博客&lt;/p&gt;
+&lt;h1 id=&quot;1-环境&quot;&gt;&lt;a href=&quot;#1-环境&quot; class=&quot;headerlink&quot; title=&quot;1.环境&quot;&gt;&lt;/a&gt;1.环境&lt;/h1&gt;&lt;h2 id=&quot;1-1安装Git&quot;&gt;&lt;a href=&quot;#1-1安装Git&quot; class
     
     </summary>
     
+      <category term="hexo" scheme="https://xiaoxier.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://xiaoxier.github.io/tags/hexo/"/>
     
   </entry>
   
@@ -151,10 +154,9 @@
     <link href="https://xiaoxier.github.io/2011/01/30/answer/"/>
     <id>https://xiaoxier.github.io/2011/01/30/answer/</id>
     <published>2011-01-29T16:00:00.000Z</published>
-    <updated>2016-05-28T12:28:19.000Z</updated>
+    <updated>2016-05-28T12:30:11.000Z</updated>
     
-    <content type="html">&lt;hr&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果大家觉得自己JS很牛的话，不妨来试试&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果大家觉得自己JS很牛的话，不妨来试试&lt;/p&gt;
 &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;1.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(function()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return typeof arguments;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;答案：’object’&lt;br&gt;arguments 是对象，虽然像数组&lt;br&gt;2.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var f = function g()&amp;#123; return 23; &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;typeof g();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -169,8 +171,7 @@
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果大家觉得自己JS很牛的话，不妨来试试&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果大家觉得自己JS很牛的话，不妨来试试&lt;/p&gt;
 &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;
     
     </summary>

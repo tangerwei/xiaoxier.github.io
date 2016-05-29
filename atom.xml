@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaoxier.github.io/"/>
-  <updated>2016-05-28T12:40:57.000Z</updated>
+  <updated>2016-05-29T02:24:24.000Z</updated>
   <id>https://xiaoxier.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xiaoxier.github.io/2016/01/30/%E5%AF%B9%E8%B1%A1/"/>
     <id>https://xiaoxier.github.io/2016/01/30/对象/</id>
     <published>2016-01-29T16:00:00.000Z</published>
-    <updated>2016-05-28T12:40:57.000Z</updated>
+    <updated>2016-05-29T02:24:24.000Z</updated>
     
     <content type="html">&lt;p&gt;工厂模式-构造函数模式-原型模式-混合模式-动态原型模式&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -56,7 +56,8 @@
 &lt;pre&gt;动态原型模式将所有信息封装在了构造函数中，而通过构造函数中初始化原型（仅第一个对象实例化时初始化原型），这个可以通过判断该方法是否有效而选择是否需要初始化原型。&lt;/pre&gt;
 
    &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;function Blog(name, url) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;this.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;this.url = url;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if (typeof this.alertInfo != &amp;apos;function&amp;apos;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 这段代码只执行了一次&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(&amp;apos;exe time&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Blog.prototype.alertInfo = function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(thia.name + this.url);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var blog = new Blog(&amp;apos;longer&amp;apos;, &amp;apos;http://tools.jb51.net&amp;apos;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;blog2 = new Blog(&amp;apos;wyc&amp;apos;, &amp;apos;http:***.com&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt; &lt;pre&gt;每次创建实例都会重新执行函数，我们可以通过判断类型是否是函数来选择是否执行函数&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt; &lt;pre&gt;每次创建实例都会重新执行函数，我们可以通过判断类型是否是函数来选择是否执行函数&lt;br&gt;&lt;!-- 多说评论框 start --&gt;&lt;br&gt;    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;/2016/01/30/%E5%AF%B9%E8%B1%A1/&quot; data-title=&quot;面向对象&quot; data-url=&quot;https://xiaoxier.github.io/2016/01/30/%E5%AF%B9%E8%B1%A1/&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;!-- 多说评论框 end --&gt;&lt;br&gt;&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;&lt;br&gt;var duoshuoQuery = {short_name:”SHORT-NAME”};&lt;br&gt;    (function() {&lt;br&gt;        var ds = document.createElement(‘script’);&lt;br&gt;        ds.type = ‘text/javascript’;ds.async = true;&lt;br&gt;        ds.src = (document.location.protocol == ‘https:’ ? ‘https:’ : ‘http:’) + ‘//static.duoshuo.com/embed.js’;&lt;br&gt;        ds.charset = ‘UTF-8’;&lt;br&gt;        (document.getElementsByTagName(‘head’)[0]&lt;br&gt;         || document.getElementsByTagName(‘body’)[0]).appendChild(ds);&lt;br&gt;    })();&lt;br&gt;    &lt;/script&gt;&lt;br&gt;&lt;!-- 多说公共JS代码 end --&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

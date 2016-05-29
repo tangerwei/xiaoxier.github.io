@@ -479,3 +479,19 @@ pre,code {
 .fancybox-close:active {
 	background:url("../fancybox/fancybox_sprite.png")
 }
+#ds-thread.ds-thread {
+#ds-reset {
+    .ds-comments-info {
+      .ds-comments-tabs {
+        li.ds-tab {
+          .ds-comments-tab-weibo {
+            display: none;
+          }
+        }
+      }
+    }
+    .ds-powered-by {
+      display: none;
+    }
+  }
+}

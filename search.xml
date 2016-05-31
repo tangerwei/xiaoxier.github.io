@@ -47,7 +47,29 @@
     <entry>
       <title><![CDATA[JS原型继承]]></title>
       <url>https://xiaoxier.github.io/2016/01/12/%E7%BB%A7%E6%89%BF/</url>
-      <content type="html"><![CDATA[<h6 id="原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。"><a href="#原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。" class="headerlink" title="原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。"></a>原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。</h6><h5 id="原型继承与基于类的比较"><a href="#原型继承与基于类的比较" class="headerlink" title="原型继承与基于类的比较:"></a>原型继承与基于类的比较:</h5><p>| 基于类的继承 | 原型继承 |<br>| 类是不可变的。在运行时，你无法修改或者添加新的方法 | 原型是灵活的。他们可以是不可变的也可以是可变的 |<br>| 类可能会不支持多重继承 | 对象可以继承多个原型对象 |<br>| 基于类的继承比较复杂。你需要使用抽象类，接口和final类等等 | 原型继承比较简洁。你只有对象，你只需要对对象进行扩展就可以了 |</p>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h6 id="原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。"><a href="#原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。" class="headerlink" title="原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。"></a>原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。</h6><h5 id="原型继承与基于类的比较"><a href="#原型继承与基于类的比较" class="headerlink" title="原型继承与基于类的比较:"></a>原型继承与基于类的比较:</h5><table>
+<thead>
+<tr>
+<th>基于类的继承</th>
+<th style="text-align:center">原型继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类是不可变的。在运行时，你无法修改或者添加新的方法</td>
+<td style="text-align:center">原型是灵活的。他们可以是不可变的也可以是可变的</td>
+</tr>
+<tr>
+<td>类可能会不支持多重继承</td>
+<td style="text-align:center">对象可以继承多个原型对象</td>
+</tr>
+<tr>
+<td>基于类的继承比较复杂。你需要使用抽象类，接口和final类等等</td>
+<td style="text-align:center">原型继承比较简洁。你只有对象，你只需要对对象进行扩展就可以了</td>
+</tr>
+</tbody>
+</table>
 <h3 id="“无中生有”对象创建法"><a href="#“无中生有”对象创建法" class="headerlink" title="“无中生有”对象创建法"></a>“无中生有”对象创建法</h3><h6 id="Javascript中得Object-creat方法用来从0开始创建一个对象，如："><a href="#Javascript中得Object-creat方法用来从0开始创建一个对象，如：" class="headerlink" title="Javascript中得Object.creat方法用来从0开始创建一个对象，如："></a>Javascript中得Object.creat方法用来从0开始创建一个对象，如：</h6><pre><code>var object = Object.create(null) ;
 </code></pre><h3 id="克隆一个现有对象"><a href="#克隆一个现有对象" class="headerlink" title="克隆一个现有对象"></a>克隆一个现有对象</h3><h6 id="Object-creat方法也可以克隆一个现有对象，如"><a href="#Object-creat方法也可以克隆一个现有对象，如" class="headerlink" title="Object.creat方法也可以克隆一个现有对象，如:"></a>Object.creat方法也可以克隆一个现有对象，如:</h6><pre><code>var rectangle = { area : function(){ return this.width * this.height ; } } ; var rect = Object.create(rectangle) ;
 </code></pre><h3 id="扩展一个新创建的对象"><a href="#扩展一个新创建的对象" class="headerlink" title="扩展一个新创建的对象"></a>扩展一个新创建的对象</h3><h6 id="上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如"><a href="#上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如" class="headerlink" title="上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如:"></a>上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如:</h6><pre><code>rect.width = 5 ; rect.height = 10 ; alert(rect.area()) ;

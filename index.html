@@ -136,34 +136,6 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2016/05/31/继承/" ></a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2016-05-31  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>&lt;!DOCTYPE html&gt;</p>
-<html lang="en"><br><head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br>    <style><br>    *{<br>        font-weight: normal;<br>        font-size: 14px<br>    }<br>        td{<br>            background: darkgray<br>        }<br>        p{<br>            font-size: 18px<br>        }<br>    </style><br></head><br><body><br><br>## 理解原型继承<br><br>###### 原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。<br><br><p>原型继承与基于类的比较:</p><br><br><table><br>    <tr><br>        <td>基于类的继承</td><br>        <td>原型继承</td><br>    </tr><br>    <tr><br>        <th>类是不可变的。在运行时，你无法修改或者添加新的方法</th><br>        <th>原型是灵活的。他们可以是不可变的也可以是可变的</th><br>    </tr><br>    <tr><br>        <th>类可能会不支持多重继承</th><br>        <th>对象可以继承多个原型对象</th><br>    </tr><br>    <tr><br>        <th>基于类的继承比较复杂。你需要使用抽象类，接口和final类等等</th><br>        <th>原型继承比较简洁。你只有对象，你只需要对对象进行扩展就可以了</th><br>    </tr><br></table><br><br>### “无中生有”对象创建法<br><br>###### Javascript中得Object.creat方法用来从0开始创建一个对象，如：<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var object = Object.create(null) ;</span><br></pre></td></tr></table></figure><br><br>### 克隆一个现有对象<br><br>###### Object.creat方法也可以克隆一个现有对象，如:<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var rectangle = &#123;</span><br><span class="line">    area : function()&#123;</span><br><span class="line">        return this.width * this.height ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; ;</span><br><span class="line">var rect = Object.create(rectangle) ;</span><br></pre></td></tr></table></figure><br><br>### 扩展一个新创建的对象<br><br>###### 上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rect.width = 5 ;</span><br><span class="line">rect.height = 10 ;</span><br><span class="line">alert(rect.area()) ;</span><br></pre></td></tr></table></figure><br><br>###### 然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。<br><br><span>原文地址： <a href="http://aaditmshah.github.io/why-prototypal-inheritance-matters/" target="_blank" rel="external">http://aaditmshah.github.io/why-prototypal-inheritance-matters/</a></span><br><br></body><br></html>
-	
-	</div>
-  <a type="button" href="/2016/05/31/继承/#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/2016/01/30/对象/" >JS面向对象基础讲解</a>
 		</h3>
 		</div>
@@ -187,6 +159,38 @@ var _hmt = _hmt || [];
 	
 	</div>
   <a type="button" href="/2016/01/30/对象/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2016/01/12/继承/" >JS原型继承</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-01-12  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+           
+              <div class="thumbnail"><a href="/2016/01/12/继承/"><img src="http://i2.buimg.com/6a75956e15f23fa7.jpg" alt="JS原型继承"  class="nofancybox"></a>
+           
+		</div>
+	
+	
+		<h2 id="理解原型继承"><a href="#理解原型继承" class="headerlink" title="理解原型继承"></a>理解原型继承</h2>
+	
+	</div>
+  <a type="button" href="/2016/01/12/继承/#more" class="btn btn-default more">阅读此文</a>
 </div>
 
 		
@@ -324,7 +328,7 @@ var _hmt = _hmt || [];
 		<h4>分类</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/JS/">JS<span>3</span></a></li>
+			<li><a href="/categories/JS/">JS<span>4</span></a></li>
 		
 			<li><a href="/categories/hexo/">hexo<span>1</span></a></li>
 		
@@ -337,13 +341,15 @@ var _hmt = _hmt || [];
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/模式/">模式<span>1</span></a></li>
-		
 			<li><a href="/tags/return/">return<span>1</span></a></li>
 		
-			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
-		
 			<li><a href="/tags/答案/">答案<span>1</span></a></li>
+		
+			<li><a href="/tags/继承/">继承<span>1</span></a></li>
+		
+			<li><a href="/tags/模式/">模式<span>1</span></a></li>
+		
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -357,11 +363,11 @@ var _hmt = _hmt || [];
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2016/05/31/继承/" ><i class="fa fa-file-o"></i></a>
+        <a href="/2016/01/30/对象/" ><i class="fa fa-file-o"></i>JS面向对象基础讲解</a>
       </li>
     
       <li>
-        <a href="/2016/01/30/对象/" ><i class="fa fa-file-o"></i>JS面向对象基础讲解</a>
+        <a href="/2016/01/12/继承/" ><i class="fa fa-file-o"></i>JS原型继承</a>
       </li>
     
       <li>

@@ -77,9 +77,10 @@
     <link href="https://xiaoxier.github.io/2016/01/12/%E7%BB%A7%E6%89%BF/"/>
     <id>https://xiaoxier.github.io/2016/01/12/继承/</id>
     <published>2016-01-11T16:00:00.000Z</published>
-    <updated>2016-05-31T12:47:50.000Z</updated>
+    <updated>2016-05-31T12:49:29.000Z</updated>
     
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;p&gt;JS原型继承 &lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h6 id=&quot;原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。&quot;&gt;&lt;a href=&quot;#原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。&quot; class=&quot;headerlink&quot; title=&quot;原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。&quot;&gt;&lt;/a&gt;原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object.create方法用来创建新的对象。新的对象会通过新的属性进行扩展。&lt;/h6&gt;&lt;h5 id=&quot;原型继承与基于类的比较&quot;&gt;&lt;a href=&quot;#原型继承与基于类的比较&quot; class=&quot;headerlink&quot; title=&quot;原型继承与基于类的比较:&quot;&gt;&lt;/a&gt;原型继承与基于类的比较:&lt;/h5&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -105,16 +106,12 @@
 &lt;h3 id=&quot;“无中生有”对象创建法&quot;&gt;&lt;a href=&quot;#“无中生有”对象创建法&quot; class=&quot;headerlink&quot; title=&quot;“无中生有”对象创建法&quot;&gt;&lt;/a&gt;“无中生有”对象创建法&lt;/h3&gt;&lt;h6 id=&quot;Javascript中得Object-creat方法用来从0开始创建一个对象，如：&quot;&gt;&lt;a href=&quot;#Javascript中得Object-creat方法用来从0开始创建一个对象，如：&quot; class=&quot;headerlink&quot; title=&quot;Javascript中得Object.creat方法用来从0开始创建一个对象，如：&quot;&gt;&lt;/a&gt;Javascript中得Object.creat方法用来从0开始创建一个对象，如：&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;var object = Object.create(null) ;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;克隆一个现有对象&quot;&gt;&lt;a href=&quot;#克隆一个现有对象&quot; class=&quot;headerlink&quot; title=&quot;克隆一个现有对象&quot;&gt;&lt;/a&gt;克隆一个现有对象&lt;/h3&gt;&lt;h6 id=&quot;Object-creat方法也可以克隆一个现有对象，如&quot;&gt;&lt;a href=&quot;#Object-creat方法也可以克隆一个现有对象，如&quot; class=&quot;headerlink&quot; title=&quot;Object.creat方法也可以克隆一个现有对象，如:&quot;&gt;&lt;/a&gt;Object.creat方法也可以克隆一个现有对象，如:&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;var rectangle = { area : function(){ return this.width * this.height ; } } ; var rect = Object.create(rectangle) ;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;扩展一个新创建的对象&quot;&gt;&lt;a href=&quot;#扩展一个新创建的对象&quot; class=&quot;headerlink&quot; title=&quot;扩展一个新创建的对象&quot;&gt;&lt;/a&gt;扩展一个新创建的对象&lt;/h3&gt;&lt;h6 id=&quot;上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如&quot;&gt;&lt;a href=&quot;#上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如&quot; class=&quot;headerlink&quot; title=&quot;上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如:&quot;&gt;&lt;/a&gt;上面的例子中我们克隆了rectangle对象命名为rect，但是在我们使用rect的area方法之前我们需要扩展它的width和height属性，如:&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;rect.width = 5 ; rect.height = 10 ; alert(rect.area()) ;
-&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot;&gt;&lt;a href=&quot;#然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot; class=&quot;headerlink&quot; title=&quot;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot;&gt;&lt;/a&gt;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&lt;/h6&gt;&lt;ol&gt;
-&lt;li&gt;列表项&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;span&gt;原文地址： &lt;a href=&quot;http://aaditmshah.github.io/why-prototypal-inheritance-matters/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://aaditmshah.github.io/why-prototypal-inheritance-matters/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h6 id=&quot;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot;&gt;&lt;a href=&quot;#然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot; class=&quot;headerlink&quot; title=&quot;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&quot;&gt;&lt;/a&gt;然而这种方式来创建一个对象的克隆然后扩展它是一个非常傻缺的方法。我们需要在每个rectangle对象的克隆上手动定义width和height属性。这里就要用到构造函数，暂不赘述。&lt;/h6&gt;&lt;p&gt;&lt;span&gt;原文地址： &lt;a href=&quot;http://aaditmshah.github.io/why-prototypal-inheritance-matters/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://aaditmshah.github.io/why-prototypal-inheritance-matters/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h6 id=&quot;原型继承很简单。在基于原型的语言中只有对象，没有类。有两种方式来创建一个新对象—“无中生有”对象创建法或者通过现有对象创建。在Javascript中Object-create方法用来创建新的对象。新的对象会通过新的属性进行扩展。
+      &lt;p&gt;JS原型继承 &lt;/p&gt;
     
     </summary>
     

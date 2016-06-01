@@ -77,7 +77,7 @@
     <link href="https://xiaoxier.github.io/2016/01/12/%E7%BB%A7%E6%89%BF/"/>
     <id>https://xiaoxier.github.io/2016/01/12/继承/</id>
     <published>2016-01-11T16:00:00.000Z</published>
-    <updated>2016-05-31T12:49:29.000Z</updated>
+    <updated>2016-06-01T04:21:07.000Z</updated>
     
     <content type="html">&lt;p&gt;JS原型继承 &lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -90,8 +90,8 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;类是不可变的。在运行时，你无法修改或者添加新的方法&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;原型是灵活的。他们可以是不可变的也可以是可变的&lt;/td&gt;
+&lt;td&gt;类是不可变的&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;原型是灵活的&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;类可能会不支持多重继承&lt;/td&gt;

@@ -58,8 +58,8 @@
 </thead>
 <tbody>
 <tr>
-<td>类是不可变的。在运行时，你无法修改或者添加新的方法</td>
-<td style="text-align:center">原型是灵活的。他们可以是不可变的也可以是可变的</td>
+<td>类是不可变的</td>
+<td style="text-align:center">原型是灵活的</td>
 </tr>
 <tr>
 <td>类可能会不支持多重继承</td>
